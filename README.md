@@ -1,20 +1,20 @@
 # DSBSC
 
 
-EX NO: 2	DSB-SC-AM MODULATOR AND DEMODULATOR
+## EX NO: 2	DSB-SC-AM MODULATOR AND DEMODULATOR
 
-AIM:
+## AIM:
 
 To write a program to perform DSBSC modulation and demodulation using SCI LAB and study its spectral characteristics
 
-EQUIPMENTS REQUIRED
+## EQUIPMENTS REQUIRED
 
 •	Computer with i3 Processor
 •	SCI LAB
 
 Note: Keep all the switch faults in off position
 
-Algorithm:
+## Algorithm:
 
 1.	Define Parameters:
 •	Fs: Sampling frequency.
@@ -47,15 +47,51 @@ Model Waveform
 
 <img width="703" height="679" alt="image" src="https://github.com/user-attachments/assets/e7c7c7f8-ccf2-41ac-b1f3-325989941a6f" />
 
-Program
+## Program
 
-Output Graph
+Am=2.25;
+
+Ac=1.8*Am;
+
+fm=290;
+
+fc=10*fm;
+
+fs=10*fc;
+
+t=0:1/fs:2/fm;
+
+em=Am*cos(2*3.14*fm*t);
+
+ec=Ac*cos(2*3.14*fc*t);
+
+eAm1=(Ac+em).*cos(2*3.14*fc*t);
+
+eAm2=(Ac-em).*cos(2*3.14*fc*t);
+
+edsbsc=eAm1-eAm2;
+
+subplot(3,1,1);
+
+plot(t,em);
+
+subplot(3,1,2);
+
+plot(t,ec);
+
+subplot(3,1,3);
+
+plot(t,edsbsc);
 
 
-Tablular Column
+## Output Graph
 
+<img width="1600" height="850" alt="image" src="https://github.com/user-attachments/assets/59cd5b58-a3b3-4b55-b71c-9a7d027b5115" />
 
-Result
+## Tablular Column
+<img width="1600" height="885" alt="image" src="https://github.com/user-attachments/assets/6b7b84c5-66fe-4edb-9af8-262741962f85" />
+
+## Result
 
 Thus the DSB-SC-AM Modulation and Demodulation is generated.
 
